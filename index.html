@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Celestial Typing Test</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #1a1a1a;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #4CAF50;
+        }
+
+        .text-display {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        .input-area {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        textarea::placeholder {
+            color: #888;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .new-paragraph {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .custom-paragraph {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        .save-paragraph {
+            background-color: #FFA500;
+            color: white;
+        }
+
+        .wrong {
+            color: #ff4444;
+        }
+
+        .correct {
+            color: #4CAF50;
+        }
+
+        #customTextArea {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #saveButton {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CELESTIAL TYPING TEST</h1>
+        </div>
+
+        <div class="stats">
+            <div>WPM: <span id="wpm">0</span></div>
+            <div>Accuracy: <span id="accuracy">100</span>%</div>
+        </div>
+
+        <div class="text-display" id="textDisplay"></div>
+
+        <div class="input-area">
+            <textarea id="input" placeholder="Start typing..." autocomplete="off" autocorrect="off" spellcheck="false"></textarea>
+        </div>
+
+        <div class="buttons">
+            <button class="new-paragraph" id="newParagraph">New Paragraph</button>
+            <button class="custom-paragraph" id="customParagraph">Custom Paragraph</button>
+            <button class="save-paragraph" id="saveButton">Save Paragraph</button>
+        </div>
+
+        <div id="customTextArea">
+            <textarea id="customInput" placeholder="Enter your custom paragraph here..."></textarea>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
